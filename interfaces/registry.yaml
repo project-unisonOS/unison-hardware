@@ -1,0 +1,18 @@
+schema_version: unison-hardware-interface-registry.v1
+interfaces:
+  - interface_id: compute-module
+    state: requirements
+    owns: [compute, accelerator, local-memory]
+    authority_excludes: [household-policy, personal-data]
+  - interface_id: storage-module
+    state: requirements
+    owns: [block-storage, health-telemetry]
+    authority_excludes: [decryption-keys, retention-policy]
+  - interface_id: sensor-gateway
+    state: requirements
+    owns: [device-identity, observation-transport]
+    authority_excludes: [incident-state, physical-actuation]
+  - interface_id: thermal-power
+    state: requirements
+    owns: [power-telemetry, cooling-telemetry, protection-status]
+    authority_excludes: [workload-content]
