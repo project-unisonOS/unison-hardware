@@ -11,3 +11,7 @@ qualification record explicitly says so.
 
 Hardware licensing is not yet selected. See `LICENSE-STATUS.md` before copying,
 fabricating, or redistributing design material.
+
+Run `python scripts/validate.py` before proposing interface or BOM changes. CI
+runs the same structural validation; engineering qualification remains a
+separate evidence requirement.
