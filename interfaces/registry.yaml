@@ -16,3 +16,23 @@ interfaces:
     state: requirements
     owns: [power-telemetry, cooling-telemetry, protection-status]
     authority_excludes: [workload-content]
+  - interface_id: memory-module
+    state: requirements
+    owns: [system-memory, memory-health-telemetry]
+    authority_excludes: [personal-data, decryption-keys]
+  - interface_id: raid-storage-blade
+    state: requirements
+    owns: [redundant-block-storage, drive-health, replacement-state]
+    authority_excludes: [retention-policy, plaintext-content]
+  - interface_id: network-security-blade
+    state: requirements
+    owns: [lan-routing, firewall-enforcement, network-telemetry]
+    authority_excludes: [person-intent, application-policy]
+  - interface_id: radio-sensor-blade
+    state: requirements
+    owns: [radio-transport, sensor-discovery, device-identity]
+    authority_excludes: [incident-state, person-profiling, physical-actuation]
+  - interface_id: enclosure-backplane
+    state: requirements
+    owns: [mechanical-retention, power-distribution, serviceability, airflow-boundary]
+    authority_excludes: [workload-content, household-policy]

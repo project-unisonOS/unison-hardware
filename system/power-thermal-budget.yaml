@@ -1,0 +1,13 @@
+schema_version: unison-power-thermal-budget.v1
+revision: concept-2026-08-15
+states:
+  standby: {input_watts: 180, heat_watts: 180, duration_minutes: 1440}
+  household_typical: {input_watts: 900, heat_watts: 900, duration_minutes: 720}
+  sustained_inference: {input_watts: 1800, heat_watts: 1800, duration_minutes: 240}
+  peak: {input_watts: 2400, heat_watts: 2400, duration_minutes: 15}
+constraints:
+  dedicated_circuit_assessment_required: true
+  professional_installation_assessment_required: true
+  heat_reuse_or_rejection_study_required: true
+  acoustic_target_dba: 45
+evidence: planned
