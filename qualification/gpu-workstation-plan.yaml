@@ -1,0 +1,22 @@
+schema_version: unison-hardware-qualification-plan.v1
+plan_id: interim-dual-gpu-workstation
+state: deferred
+evidence_class: planned
+activation_gates: [physical-inventory, firmware-baseline, driver-baseline, safe-power-connection, thermal-instrumentation]
+test_groups:
+  - group_id: inventory
+    command: python scripts/collect_gpu_baseline.py --output evidence/gpu-baseline.json
+    metrics: [cpu, memory_bytes, gpu_models, gpu_memory_bytes, driver, storage_bytes, network]
+  - group_id: inference
+    command: python scripts/run_qualification.py --group inference
+    metrics: [tokens_per_second, first_token_ms, concurrency, error_rate, memory_high_watermark]
+  - group_id: rebuild
+    command: python scripts/run_qualification.py --group rebuild
+    metrics: [records_per_second, recovery_seconds, retry_count, cutover_seconds]
+  - group_id: power-thermal
+    command: python scripts/run_qualification.py --group power-thermal
+    metrics: [wall_watts, energy_wh, gpu_temperature_c, ambient_temperature_c, throttle_events, acoustic_dba]
+  - group_id: resilience
+    command: python scripts/run_qualification.py --group resilience
+    metrics: [restart_recovery, network_loss_recovery, disk_pressure_response, rollback_success]
+prohibited_claims: [supported-hardware, production-ready, safe-installation, sustained-thermal-capacity]

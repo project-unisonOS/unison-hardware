@@ -1,0 +1,60 @@
+schema_version: unison-hardware-bom.v1
+revision: concept-2026-08-15
+currency: USD
+priced_at: "2026-08-15"
+items:
+  - item_id: chassis-enclosure
+    category: enclosure
+    manufacturer_part_number: null
+    quantity: 1
+    unit_cost_estimate: 900
+    source: engineering budgetary estimate
+    lifecycle: concept
+    estimate_status: budgetary
+    power_watts: 0
+    thermal_watts: 0
+    substitution_notes: Custom branded enclosure; tooling and certification excluded.
+  - item_id: compute-blade-pair
+    category: compute
+    manufacturer_part_number: null
+    quantity: 2
+    unit_cost_estimate: 3500
+    source: architecture budgetary envelope, not a vendor selection
+    lifecycle: concept
+    estimate_status: budgetary
+    power_watts: 700
+    thermal_watts: 700
+    substitution_notes: Select against 2027 or 2028 accelerator, memory, and open-driver requirements.
+  - item_id: redundant-storage-set
+    category: storage
+    manufacturer_part_number: null
+    quantity: 1
+    unit_cost_estimate: 2200
+    source: architecture budgetary envelope, not a vendor selection
+    lifecycle: concept
+    estimate_status: budgetary
+    power_watts: 160
+    thermal_watts: 160
+    substitution_notes: Capacity and media mix remain workload dependent.
+  - item_id: network-security-radio
+    category: networking
+    manufacturer_part_number: null
+    quantity: 1
+    unit_cost_estimate: 1200
+    source: architecture budgetary envelope, not a vendor selection
+    lifecycle: concept
+    estimate_status: budgetary
+    power_watts: 120
+    thermal_watts: 120
+    substitution_notes: Radio modules must be regionally certified and independently replaceable.
+  - item_id: power-cooling-system
+    category: power-thermal
+    manufacturer_part_number: null
+    quantity: 1
+    unit_cost_estimate: 1800
+    source: architecture budgetary envelope, installation excluded
+    lifecycle: concept
+    estimate_status: budgetary
+    power_watts: 250
+    thermal_watts: 250
+    substitution_notes: Final design requires measured load, acoustic, circuit, and installation evidence.

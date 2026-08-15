@@ -15,3 +15,10 @@ fabricating, or redistributing design material.
 Run `python scripts/validate.py` before proposing interface or BOM changes. CI
 runs the same structural validation; engineering qualification remains a
 separate evidence requirement.
+
+The current concept package includes modular blade interfaces, budgetary BOM
+history, power and thermal envelopes, enclosure requirements, open design-source
+conventions, and an executable deferred qualification plan. After the interim
+workstation is installed, begin with `python scripts/collect_gpu_baseline.py
+--output evidence/gpu-baseline.json`. Load and resilience qualification commands
+fail closed until named fixtures and measurement adapters are configured.
